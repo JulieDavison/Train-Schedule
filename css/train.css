@@ -1,0 +1,10 @@
+
+body {
+  background-image: url("beachtrain.png");
+}
+
+#train-table th,
+    td {
+      display: inline-block;
+      width: 16.575%;
+    }
