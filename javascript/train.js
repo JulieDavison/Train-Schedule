@@ -81,7 +81,7 @@ database.ref().on("child_added", function (childSnapshot) {
   console.log(trainFrequency);
 
   
-  var remainder = moment().diff(moment.unix(trainStartTime), "minutes")%trainFrequency;
+  var remainder = moment().diff(moment.unix(trainStartTime), "minutes")%trainFrequency;     //modulus   12 / 5 2 R 2 => modulus is only the remainder 12 % 5 => 2
   console.log(remainder);
   
   var minutes = trainFrequency - remainder;
@@ -96,7 +96,7 @@ database.ref().on("child_added", function (childSnapshot) {
   var newRow = $("<tr>").append(
     $("<td>").text(trainName),
     $("<td>").text(trainDestination),
-    $("<td>").text(remainder),
+    $("<td>").text(trainFrequency),
     // $("<td>").text(trainStartDate),
     $("<td>").text(arrival),
     $("<td>").text(minutes)
